@@ -1,0 +1,540 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { InventoryItem } from '../types.ts';
+
+export type { InventoryItem };
+
+/**
+ * inventoryData - Kho Việt Phục Dataset (NO POINTS)
+ * Chứa toàn bộ Y Phục (Nam/Nữ) và Phụ Kiện (3 nhóm: Nón/Mũ, Trang Sức, Giày/Hài)
+ * Đã lược bỏ hoàn toàn hệ thống điểm số (points / baseScore / bonus).
+ * Giữ nguyên Tên vật phẩm, Phân nhóm (category), Giới tính (gender) và Thẻ phong cách (tag / tags).
+ */
+export const inventoryData: InventoryItem[] = [
+  // =========================================================================
+  // 1. Y PHỤC (GARMENTS) - NỮ PHỤC (9 MÓN)
+  // =========================================================================
+  {
+    id: 'ao-nhat-binh',
+    name: 'Áo Nhật Bình (Hậu Cung)',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Hậu Cung', 'Triều Nguyễn'],
+    icon: '👑',
+    primaryColor: '#f59e0b',
+    secondaryColor: '#92400e',
+    description: 'Áo khoác hoàng tộc cổ chữ nhật ngũ sắc, đính nơ ngọc và hoa văn phượng hoàng uy nghi.',
+  },
+  {
+    id: 'ao-tac-nu',
+    name: 'Áo Tấc Nữ (Tay Thụng)',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Lễ Nghi', 'Triều Nguyễn'],
+    icon: '👘',
+    primaryColor: '#b91c1c',
+    secondaryColor: '#7f1d1d',
+    description: 'Lễ phục ngũ thân tay thụng dài rộng trang trọng trong các đại lễ, hôn lễ cung đình và quý tộc.',
+  },
+  {
+    id: 'ao-tu-than',
+    name: 'Áo Tứ Thân / Váy Ba Vạt',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Dân Gian', 'Bắc Bộ'],
+    icon: '🌾',
+    primaryColor: '#78350f',
+    secondaryColor: '#451a03',
+    description: 'Bốn vạt thướt tha mộc mạc, thắt lưng lụa đào, yếm thắm chấm gót váy đen dân gian truyền thống.',
+  },
+  {
+    id: 'ao-giao-linh',
+    name: 'Áo Giao Linh (Kèm Váy Quây)',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Đại Việt', 'Lý - Trần'],
+    icon: '🌸',
+    primaryColor: '#0284c7',
+    secondaryColor: '#075985',
+    description: 'Cổ áo giao chéo chữ Y kết hợp váy quây thướt tha mang đậm nét mỹ cảm Đại Việt thời Lý - Trần.',
+  },
+  {
+    id: 'ao-lap-linh',
+    name: 'Áo Lập Lĩnh (Cổ Đứng Trơn)',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Đoan Trang', 'Thanh Nhã'],
+    icon: '🌺',
+    primaryColor: '#db2777',
+    secondaryColor: '#9d174d',
+    description: 'Cổ đứng cài khuy lệch sườn kín đáo, đường may tinh tế thanh nhã toát lên vẻ đoan trang khuê các.',
+  },
+  {
+    id: 'ao-ngu-than-nu',
+    name: 'Áo Ngũ Thân Tay Chẽn Nữ',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Truyền Thống', 'Định Chế'],
+    icon: '✨',
+    primaryColor: '#059669',
+    secondaryColor: '#064e3b',
+    description: 'Năm thân áo tượng trưng tứ thân phụ mẫu và bản thân, tay chẽn gọn gàng, định chế thời Nguyễn.',
+  },
+  {
+    id: 'ao-dai-nu',
+    name: 'Áo Dài Truyền Thống',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Quốc Phục', 'Duyên Dáng'],
+    icon: '🪷',
+    primaryColor: '#e11d48',
+    secondaryColor: '#881337',
+    description: 'Biểu tượng vẻ đẹp người phụ nữ Việt Nam qua các thời kỳ, tôn vinh đường nét duyên dáng thướt tha.',
+  },
+  {
+    id: 'ao-vien-linh-nu',
+    name: 'Áo Viên Lĩnh Nữ (Cổ Tròn Cung Đình)',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Cung Đình', 'Thời Lê'],
+    icon: '👑',
+    primaryColor: '#7c3aed',
+    secondaryColor: '#4c1d95',
+    description: 'Cổ tròn viên lĩnh cài khuy vai, viền gấm thêu hoa dây cung đình Đại Việt thời Lê sơ rực rỡ.',
+  },
+  {
+    id: 'mang-phuc-nu',
+    name: 'Mãng Phục Nữ Hoàng Triều',
+    category: 'garment',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Quý Tộc', 'Triều Nghi'],
+    icon: '🐉',
+    primaryColor: '#c026d3',
+    secondaryColor: '#701a75',
+    description: 'Y phục lộng lẫy thêu hình mãng rồng uốn lượn dành riêng cho công chúa và mệnh phụ bậc nhất triều đình.',
+  },
+
+  // =========================================================================
+  // 1. Y PHỤC (GARMENTS) - NAM PHỤC (9 MÓN)
+  // =========================================================================
+  {
+    id: 'ao-tac-nam',
+    name: 'Áo Tấc Nam (Lễ Phục Ngũ Thân)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Lễ Nghi', 'Ngũ Thân'],
+    icon: '👘',
+    primaryColor: '#1e3a5f',
+    secondaryColor: '#0f172a',
+    description: 'Lễ phục truyền thống nam giới tay thụng dài rộng, mang phong thái trang nghiêm khi hành lễ đại triều.',
+  },
+  {
+    id: 'ao-ma-doan',
+    name: 'Áo Mã Đoán (Áo Quan Triều Nguyễn)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Triều Phục', 'Quan Chức'],
+    icon: '🏛️',
+    primaryColor: '#1a365d',
+    secondaryColor: '#0f172a',
+    description: 'Triều phục quan lại có Bổ Tử hình vuông thêu chim muông hoặc thú ngự trước ngực biểu thị phẩm trật.',
+  },
+  {
+    id: 'ao-trang-vat',
+    name: 'Áo Tràng Vạt (Giao Linh Nam)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Đĩnh Đạc', 'Nho Phong'],
+    icon: '📜',
+    primaryColor: '#254b62',
+    secondaryColor: '#142936',
+    description: 'Vạt chéo chữ Y khoáng đạt, phong thái nho sinh, danh sĩ đĩnh đạc tự tại giữa đất trời.',
+  },
+  {
+    id: 'ao-ngu-than-nam',
+    name: 'Áo Ngũ Thân Tay Chẽn Nam',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Lịch Lãm', 'Quân Tử'],
+    icon: '✨',
+    primaryColor: '#334155',
+    secondaryColor: '#1e293b',
+    description: 'Phom áo năm thân tay chẽn gọn gàng, cổ đứng nghiêm túc thể hiện cốt cách trượng phu.',
+  },
+  {
+    id: 'ao-giao-linh-nam',
+    name: 'Áo Giao Linh Nam (Thắt Lưng Thần Sĩ)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Thần Sĩ', 'Lý - Trần'],
+    icon: '⚔️',
+    primaryColor: '#0369a1',
+    secondaryColor: '#0c4a6e',
+    description: 'Dáng áo vạt chéo cổ rộng thắt đại lụa dũng mãnh của võ tướng và hiệp khách Đại Việt.',
+  },
+  {
+    id: 'ao-truc-linh-nam',
+    name: 'Áo Trực Lĩnh Nam (Thõng Tay Lý - Trần)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Khí Phách', 'Cổ Đại'],
+    icon: '🛡️',
+    primaryColor: '#451a03',
+    secondaryColor: '#290e03',
+    description: 'Cổ áo mở thẳng buông rủ hai bên ngực, ống tay thụng bay bổng đặc trưng thời Lý - Trần.',
+  },
+  {
+    id: 'ao-lap-linh-nam',
+    name: 'Áo Lập Lĩnh Nam (Cổ Đứng Cài Cúc)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Nho Nhã', 'Truyền Thống'],
+    icon: '🖋️',
+    primaryColor: '#15803d',
+    secondaryColor: '#14532d',
+    description: 'Cổ đứng cài khuy thẳng tắp, tà áo suôn phẳng thể hiện tác phong đàng hoàng nho nhã.',
+  },
+  {
+    id: 'mang-phuc-nam',
+    name: 'Mãng Phục Nam (Thêu Rồng Bốn Móng)',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Hoàng Triều', 'Uy Nghi'],
+    icon: '🐲',
+    primaryColor: '#b45309',
+    secondaryColor: '#78350f',
+    description: 'Y phục thêu hình mãng rồng bốn móng cuộn mây hoàng kim rực rỡ dành cho hoàng thân quốc thích.',
+  },
+  {
+    id: 'ao-dai-nam',
+    name: 'Áo Dài Nam Truyền thống',
+    category: 'garment',
+    gender: 'male',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Thanh Lịch', 'Truyền Thống'],
+    icon: '🎋',
+    primaryColor: '#475569',
+    secondaryColor: '#1e293b',
+    description: 'Tà áo dài năm thân nam tính, thanh lịch khi đi cùng khăn đóng truyền thống trong ngày lễ tết.',
+  },
+
+  // =========================================================================
+  // 2. PHỤ KIỆN (NHÓM 1: NÓN / MŨ / KHĂN ĐỘI) - 9 MÓN
+  // =========================================================================
+  {
+    id: 'man-khan-xep',
+    name: 'Mấn Khăn Xếp (Thêu Rồng Phượng)',
+    category: 'head',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Cung Đình'],
+    icon: '👑',
+    description: 'Mấn vành lụa thêu chỉ vàng hình long phụng uốn lượn lộng lẫy trên đỉnh đầu tôn quý.',
+  },
+  {
+    id: 'non-ba-tam',
+    name: 'Nón Ba Tầm (Quai Thao Kép)',
+    category: 'head',
+    gender: 'female',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Dân Gian'],
+    icon: '🌾',
+    description: 'Chiếc nón tròn phẳng rộng vành che nghiêng làn tóc, quai thao sợi tơ tằm mềm mại Bắc Bộ.',
+  },
+  {
+    id: 'non-la-co-hut',
+    name: 'Nón Lá Cổ Hút',
+    category: 'head',
+    gender: 'unisex',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Mộc Mạc'],
+    icon: '👒',
+    description: 'Nón lá hình chóp nhọn đan từ lá cọ sấy khô, chóp bọc bạc hoặc thắt lụa che nắng mưa.',
+  },
+  {
+    id: 'mu-phuong-hoang-cung',
+    name: 'Mũ Phượng Hoàng Cung (Nữ)',
+    category: 'head',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Hoàng Hậu'],
+    icon: '🪶',
+    description: 'Mũ miện dát vàng chạm chim phượng ngậm ngọc buông rủ tua rua lưu ly tuyệt mỹ của Hoàng hậu.',
+  },
+  {
+    id: 'khan-dong-nam',
+    name: 'Khăn Đóng Nam (7 Nếp)',
+    category: 'head',
+    gender: 'male',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Truyền Thống'],
+    icon: '🎩',
+    description: 'Khăn quấn vải the đen hoặc gấm lam 7 nếp chữ Nhất ngay ngắn trên vầng trán nam nhân.',
+  },
+  {
+    id: 'non-ngua-binh-dinh',
+    name: 'Nón Ngựa Bình Định (Chạm Bạc)',
+    category: 'head',
+    gender: 'male',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Võ Khí'],
+    icon: '🐎',
+    description: 'Chiếc nón kỳ công đỉnh bịt bạc chạm rồng phượng, dùng cho võ tướng và kỵ binh đất võ Bình Định.',
+  },
+  {
+    id: 'mu-o-sa',
+    name: 'Mũ Ô Sa (Mũ Bọ Cánh Cà Khoa Bảng)',
+    category: 'head',
+    gender: 'male',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Khoa Bảng'],
+    icon: '🎓',
+    description: 'Mũ quan hai cánh chuồn ngang vươn rộng, biểu tượng vinh quy bái tổ của bậc tiến sĩ đỗ đạt.',
+  },
+  {
+    id: 'mu-phoc-dau',
+    name: 'Mũ Phốc Đầu (Cho Nam Quan Lại)',
+    category: 'head',
+    gender: 'male',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Triều Đình'],
+    icon: '👑',
+    description: 'Mũ sa đen búi tóc cao phía sau của quan chức triều đình thời Lý - Trần - Lê khi vào triều yết kiến.',
+  },
+  {
+    id: 'mu-khoi-giap-co-phong',
+    name: 'Mũ Khôi Giáp Cổ Phong',
+    category: 'head',
+    gender: 'male',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Tướng Soái'],
+    icon: '🛡️',
+    description: 'Mũ thiết giáp đồng đúc chạm hoa văn sóng nước và ngôi sao chiến trận của dũng tướng Đại Việt.',
+  },
+
+  // =========================================================================
+  // 3. PHỤ KIỆN (NHÓM 2: TRANG SỨC / CẦM TAY) - 10 MÓN
+  // =========================================================================
+  {
+    id: 'tram-cai-toc-dinh-ngoc',
+    name: 'Trâm Cài Tóc Đính Ngọc',
+    category: 'jewelry',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Trang Sức'],
+    icon: '✨',
+    description: 'Trâm vàng chạm cánh sen nâng viên ngọc bích tỏa ánh sáng lung linh cài búi tóc mây.',
+  },
+  {
+    id: 'kieng-bac-cham-tro',
+    name: 'Kiềng Bạc Chạm Trổ Cổ Truyền',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Bạc Ta'],
+    icon: '📿',
+    description: 'Vòng kiềng bạc nguyên khối chạm khắc rồng mây tinh xảo ôm sát cổ áo tôn thêm vẻ cao quý.',
+  },
+  {
+    id: 'quat-lua-tron-cung-dinh',
+    name: 'Quạt Lụa Tròn Cung Đình',
+    category: 'jewelry',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Khuê Các'],
+    icon: '🪭',
+    description: 'Quạt lụa tròn căng trên khung trúc sơn mài, thêu cảnh sơn thủy hữu tình và nhành hoa mai.',
+  },
+  {
+    id: 'quai-thao-kep-that-lua',
+    name: 'Quai Thao Kép Thắt Lụa',
+    category: 'jewelry',
+    gender: 'female',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Thơ Mộng'],
+    icon: '🎀',
+    description: 'Dây quai thao đan bện bằng sợi tơ tằm hai màu nhuộm rực rỡ buông rủ duyên dáng bên vai.',
+  },
+  {
+    id: 'chuoi-hat-tram-huong',
+    name: 'Chuỗi Hạt Trầm Hương Cổ Phong',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Thanh Tịnh'],
+    icon: '📿',
+    description: 'Chuỗi 108 hạt trầm tự nhiên thơm ngát tỏa hương tĩnh tâm thanh thản cho bậc nho sĩ quân tử.',
+  },
+  {
+    id: 'quat-giay-thu-phap-audition',
+    name: 'Quạt Giấy Thư Pháp Audition',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Lãng Tử', 'Audition R'],
+    icon: '🪭',
+    description: 'Quạt nan tre dán giấy điệp viết đôi câu đối thư pháp chữ Nôm phong trần hào hoa lãng tử.',
+  },
+  {
+    id: 'kiem-co-phong-nam-ngoc',
+    name: 'Kiếm Cổ Phong Nạm Ngọc (Cầm Tay Nam)',
+    category: 'jewelry',
+    gender: 'male',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Hiệp Khách'],
+    icon: '🗡️',
+    description: 'Bảo kiếm vỏ bao chạm bạc nạm ngọc thanh long, khí phách ngút trời của tướng soái nam nhi.',
+  },
+  {
+    id: 'tui-gam-theu-hoa-van',
+    name: 'Túi Gấm Thêu Hoa Văn Đại Việt',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Văn Hoa'],
+    icon: '👛',
+    description: 'Túi gấm đeo thắt lưng thêu hoa văn mây lửa Đại Việt đựng hương thảo và ngọc bội lưu niệm.',
+  },
+  {
+    id: 'dai-that-lung-lua-ngu-sac',
+    name: 'Dải Thắt Lưng Lụa Ngũ Sắc',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Lễ Hội'],
+    icon: '🎗️',
+    description: 'Dải lụa thắt đai ngũ hành màu sắc rực rỡ buông thõng hai bên vạt áo tạo điểm nhấn kiêu sa.',
+  },
+  {
+    id: 'ngoc-boi-treo-that-lung',
+    name: 'Ngọc Bội Treo Thắt Lưng',
+    category: 'jewelry',
+    gender: 'unisex',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Quân Tử'],
+    icon: '💎',
+    description: 'Miếng ngọc bích chạm hình song long chầu nguyệt phát ra tiếng leng keng thanh tao mỗi bước đi.',
+  },
+
+  // =========================================================================
+  // 4. PHỤ KIỆN (NHÓM 3: GIÀY / HÀI / GUỐC) - 7 MÓN
+  // =========================================================================
+  {
+    id: 'hai-mui-vut-theu-phuong',
+    name: 'Hài Mũi Vút (Thêu Phượng/Mây)',
+    category: 'feet',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Cung Đình'],
+    icon: '👠',
+    description: 'Hài cung đình mũi cong vút hình hoa sen thêu chỉ kim tuyến mây phượng bước đi nhẹ tựa mây.',
+  },
+  {
+    id: 'guoc-moc-dan-gian',
+    name: 'Guốc Mộc Dân Gian (Quai Lụa)',
+    category: 'feet',
+    gender: 'unisex',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Dân Dã'],
+    icon: '🪵',
+    description: 'Guốc đẽo từ gỗ xoan mộc mạc quai lụa đào êm ái, gõ nhịp lách cách thân thương trên đường làng.',
+  },
+  {
+    id: 'ung-da-co-phong-nam',
+    name: 'Ủng Da Cổ Phong (Cho Nam Phục)',
+    category: 'feet',
+    gender: 'male',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Võ Tướng'],
+    icon: '👢',
+    description: 'Ủng cao cổ da đen bóng viền đồng chắc chắn, sải bước dũng mãnh của các đấng trượng phu.',
+  },
+  {
+    id: 'hai-cung-dinh-dinh-cuom',
+    name: 'Hài Cung Đình Đính Cườm',
+    category: 'feet',
+    gender: 'female',
+    tag: 'Vương Giả',
+    tags: ['Vương Giả', 'Đài Các'],
+    icon: '🥿',
+    description: 'Đôi hài lụa thêu cườm lấp lánh nâng gót ngọc các cung tần mỹ nữ chốn thâm nghiêm hoàng triều.',
+  },
+  {
+    id: 'giay-lua-theu-that-no',
+    name: 'Giày Lụa Thêu Thắt Nơ',
+    category: 'feet',
+    gender: 'female',
+    tag: 'Chuẩn M',
+    tags: ['Chuẩn M', 'Khuê Các'],
+    icon: '🩰',
+    description: 'Giày vải lụa mềm mại thêu hoa mai hoa cúc thắt nơ lụa yêu kiều cho tiểu thư đài các.',
+  },
+  {
+    id: 'sneaker-neon-audition-remix',
+    name: 'Sneaker Neon Audition Remix',
+    category: 'feet',
+    gender: 'unisex',
+    tag: 'Sử Thi',
+    tags: ['Sử Thi', 'Remix', 'Hiện Đại', 'Audition R'],
+    icon: '👟',
+    description: 'Đôi giày thể thao phát sáng dạ quang phối cùng cổ phục mang phong cách phá cách sàn nhảy Audition.',
+  },
+  {
+    id: 'guoc-cao-goc-son-mai',
+    name: 'Guốc Cao Góc Sơn Mài',
+    category: 'feet',
+    gender: 'female',
+    tag: 'Cổ Phong',
+    tags: ['Cổ Phong', 'Mỹ Nghệ'],
+    icon: '👡',
+    description: 'Guốc gỗ sơn mài truyền thống vẽ họa tiết cánh sen thếp vàng óng ả duyên dáng.',
+  },
+];
+
+/**
+ * Lọc danh sách y phục theo giới tính (Nam / Nữ)
+ */
+export function getGarmentsByGender(gender: 'male' | 'female'): InventoryItem[] {
+  return inventoryData.filter(
+    (item) => item.category === 'garment' && (item.gender === gender || item.gender === 'unisex')
+  );
+}
+
+/**
+ * Lọc danh sách phụ kiện theo phân nhóm (head / jewelry / feet) và giới tính
+ */
+export function getAccessoriesByCategoryAndGender(
+  category: 'head' | 'jewelry' | 'feet',
+  gender: 'male' | 'female'
+): InventoryItem[] {
+  return inventoryData.filter(
+    (item) => item.category === category && (item.gender === gender || item.gender === 'unisex')
+  );
+}
+
+/**
+ * Tìm vật phẩm theo ID
+ */
+export function getInventoryItemById(id: string): InventoryItem | undefined {
+  return inventoryData.find((item) => item.id === id);
+}

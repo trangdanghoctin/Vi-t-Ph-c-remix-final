@@ -1,0 +1,763 @@
+@import "tailwindcss";
+
+:root {
+  /* ================= LIGHT MODE PALETTE (Tươi sáng & Ấm áp) ================= */
+  --bg-main: #FED2B7;       /* Cam đào nhạt - rgb(254, 210, 183) */
+  --bg-container: #FFFFE3;  /* Vàng kem nhạt - rgb(255, 255, 227) */
+  --bg-card: #FFFFE3;       /* Vàng kem nhạt */
+  --accent-soft: #FED2B7;   /* Cam đào nhạt - rgb(254, 210, 183) */
+  --accent-highlight: #FFD6B0; /* Cam đào nhạt bổ trợ */
+  --btn-primary: #FFA9A9;   /* Hồng pastel - rgb(255, 169, 169) */
+  --text-main: #3D2314;     /* Nâu sẫm tương phản cao #3D2314 theo yêu cầu */
+  --text-muted: #5C2E1B;    /* Nâu đậm trầm thay cho đỏ gạch nhạt */
+  --border-theme: #FED2B7;  /* Viền cam đào nhạt */
+  --border-strong: #FFBFA0; /* Viền nhấn */
+  
+  /* Scrollbar Light Mode Palette: Hòa quyện tone Vàng Kem #FFFFE3 & Cam Đào #FED2B7 */
+  --sb-track: #FFFFE3;
+  --sb-border: #FED2B7;
+  --sb-thumb: #FED2B7;
+  --sb-thumb-hover: #FFA9A9;
+}
+
+[data-theme="dark"], .theme-dark {
+  /* ================= DARK MODE PALETTE (Chế độ Tối) ================= */
+  --bg-main: #050B31;       /* Xanh đen đậm / Midnight Blue - rgb(5, 11, 49) */
+  --bg-container: #0E2045;  /* Xanh Navy đêm - rgb(14, 32, 69) */
+  --accent-soft: #1F3C73;   /* Xanh biển sâu - rgb(31, 60, 115) */
+  --btn-primary: #FFF3CB;   /* Vàng bơ hoàng hôn nhạt - rgb(255, 243, 203) */
+  --text-main: #FFFFFF;     /* Trắng tinh khôi */
+  --text-muted: #CBD5E1;    /* Trắng xám khói */
+  --border-theme: #1F3C73;  /* Viền xanh biển sâu */
+  --border-strong: #2a5298; /* Viền nhấn */
+
+  /* Scrollbar Dark Mode */
+  --sb-track: #050B31;
+  --sb-border: #1F3C73;
+  --sb-thumb: #D4AF37;
+  --sb-thumb-hover: #FFD700;
+}
+
+/* ================= THANH CUỘN RETRO PIXEL ART ĐỒNG BỘ 100% VỚI BỐI CẢNH ================= */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border: 1px solid var(--sb-border);
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 0px;
+  border: 1px solid var(--sb-border);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+  box-shadow: 0 0 6px rgba(254, 210, 183, 0.8);
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* ================= THANH CUỘN CHO TỦ ĐỒ VÀ BẢNG DANH SÁCH ================= */
+.wardrobe-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
+}
+
+.wardrobe-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.wardrobe-scroll::-webkit-scrollbar-track {
+  background: var(--sb-track);
+  border: 1px solid var(--sb-border);
+  border-radius: 0px;
+}
+
+.wardrobe-scroll::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb);
+  border-radius: 0px;
+  border: 1px solid var(--sb-border);
+}
+
+.wardrobe-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--sb-thumb-hover);
+  box-shadow: 0 0 6px rgba(254, 210, 183, 0.8);
+}
+
+.wardrobe-scroll::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@layer base {
+  body {
+    font-family: 'Be Vietnam Pro', 'Nunito', system-ui, -apple-system, sans-serif;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6, .pixel-title, .modal-title, .title-retro {
+    font-family: 'VT323', 'Silkscreen', monospace;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+  p, span, label, button, a, input, select, textarea, .font-body {
+    font-family: 'Be Vietnam Pro', 'Nunito', system-ui, sans-serif;
+    letter-spacing: 0.5px;
+  }
+
+  p, .description-text {
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+}
+
+.pixel-font {
+  font-family: 'VT323', 'Silkscreen', monospace;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.retro-mono {
+  font-family: 'VT323', monospace;
+  letter-spacing: 0.5px;
+}
+
+.font-content {
+  font-family: 'Be Vietnam Pro', 'Nunito', system-ui, sans-serif;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.font-body {
+  font-family: 'Be Vietnam Pro', 'Nunito', system-ui, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Glow effects */
+.glow-gold {
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.7), 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.glow-jade {
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.7), 0 0 20px rgba(52, 211, 153, 0.5);
+}
+
+.glow-ruby {
+  text-shadow: 0 0 10px rgba(225, 29, 72, 0.7), 0 0 20px rgba(244, 63, 94, 0.5);
+}
+
+.box-glow-gold {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35), inset 0 0 15px rgba(251, 191, 36, 0.2);
+}
+
+/* Theme Adaptive Glass Panels */
+.pixel-glass-theme {
+  background: var(--bg-container);
+  color: var(--text-main);
+  border: 2px solid var(--border-theme);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Light / Dark Mode specific text & button accents */
+[data-theme="light"] .theme-header {
+  background: rgba(255, 255, 227, 0.92);
+  border-bottom: 2px solid #FED2B7;
+  color: #3D2314;
+  box-shadow: 0 4px 12px rgba(254, 210, 183, 0.35);
+}
+
+[data-theme="dark"] .theme-header {
+  background: rgba(14, 32, 69, 0.85);
+  border-bottom: 2px solid #1F3C73;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(5, 11, 49, 0.6);
+}
+
+[data-theme="light"] .theme-card {
+  background: rgba(255, 255, 227, 0.95);
+  border: 2px solid #FED2B7;
+  color: #3D2314;
+}
+
+[data-theme="dark"] .theme-card {
+  background: rgba(14, 32, 69, 0.85);
+  border: 2px solid #1F3C73;
+  color: #FFFFFF;
+}
+
+[data-theme="light"] .theme-btn-primary {
+  background-color: #FFA9A9;
+  color: #3D2314;
+  border-color: #FFBFA0;
+}
+[data-theme="light"] .theme-btn-primary:hover {
+  background-color: #ff9393;
+}
+
+[data-theme="dark"] .theme-btn-primary {
+  background-color: #FFF3CB;
+  color: #050B31;
+  border-color: #FFF3CB;
+}
+[data-theme="dark"] .theme-btn-primary:hover {
+  background-color: #fef08a;
+}
+
+.pixel-glass-dark {
+  background: rgba(15, 10, 25, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(245, 158, 11, 0.45);
+}
+
+.pixel-glass-light {
+  background: rgba(255, 251, 245, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(180, 83, 9, 0.45);
+}
+
+/* 3D Gold Carved Royal Pixel Borders (Khung viền nổi 3D mạ vàng chạm khắc tinh xảo) */
+.pixel-gold-3d {
+  box-shadow: 
+    0 -4px 0 0 #000,
+    0 4px 0 0 #000,
+    -4px 0 0 0 #000,
+    4px 0 0 0 #000,
+    inset 2px 2px 0 0 #fff5cc,
+    inset -2px -2px 0 0 #784c07,
+    inset 4px 4px 0 0 #ffd700,
+    inset -4px -4px 0 0 #925804;
+}
+
+.pixel-carved-gold {
+  border: 3px solid #1a1202;
+  box-shadow: 
+    0 -3px 0 0 #3b2803,
+    0 3px 0 0 #3b2803,
+    -3px 0 0 0 #3b2803,
+    3px 0 0 0 #3b2803,
+    inset 0 0 0 2px #ffe58f,
+    inset 0 0 0 4px #d48806,
+    inset 0 0 0 6px #613b02;
+}
+
+/* 8-bit stepped borders */
+.pixel-border-sm {
+  box-shadow: 
+    0 -3px 0 0 #000,
+    0 3px 0 0 #000,
+    -3px 0 0 0 #000,
+    3px 0 0 0 #000;
+}
+
+.pixel-border-md {
+  box-shadow: 
+    0 -4px 0 0 #000,
+    0 4px 0 0 #000,
+    -4px 0 0 0 #000,
+    4px 0 0 0 #000;
+}
+
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 26, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+@keyframes pixel-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-pixel-bob {
+  animation: pixel-bob 2s steps(4) infinite;
+}
+
+@keyframes lantern-flicker {
+  0%, 100% { opacity: 0.9; filter: drop-shadow(0 0 8px #f59e0b); }
+  50% { opacity: 1; filter: drop-shadow(0 0 14px #ef4444); }
+}
+
+.animate-lantern {
+  animation: lantern-flicker 1.6s steps(3) infinite;
+}
+
+@keyframes pixel-red-blink {
+  0%, 100% {
+    background-color: #450a0a;
+    border-color: #ef4444;
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    background-color: #7f1d1d;
+    border-color: #f87171;
+    box-shadow: 0 0 24px rgba(248, 113, 113, 0.95);
+  }
+}
+
+.animate-pixel-red-blink {
+  animation: pixel-red-blink 1s steps(2) infinite;
+}
+
+@keyframes gold-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.7), inset 0 0 12px rgba(251, 191, 36, 0.4);
+    border-color: #fbbf24;
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(253, 224, 71, 0.95), inset 0 0 20px rgba(250, 204, 21, 0.6);
+    border-color: #ffffff;
+  }
+}
+
+.animate-gold-glow {
+  animation: gold-glow-pulse 1.8s ease-in-out infinite;
+}
+
+/* Backgrounds Nam vs Nữ */
+.bg-court-male {
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #527ba0 0%,
+      #294766 55%,
+      #192f49 100%
+    );
+}
+
+.bg-court-female {
+  background: 
+    radial-gradient(circle at 50% 30%, #4a1d34 0%, #170914 75%),
+    repeating-linear-gradient(135deg, rgba(244, 63, 94, 0.04) 0px, rgba(244, 63, 94, 0.04) 8px, transparent 8px, transparent 16px);
+}
+
+/* ==========================================================================
+   REQUIREMENT 1: DRAGGABLE MODAL & RETRO PIXEL ART SCROLLBAR STYLING
+   ========================================================================== */
+
+/* 1. Modal Main Container */
+#kho-viet-phuc-container {
+  max-height: 520px !important;
+  overflow-y: auto !important;
+  position: fixed;
+  z-index: 50;
+}
+
+/* 2. Drag Handle Header */
+.modal-header {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.modal-header:active,
+.modal-header.dragging {
+  cursor: grabbing;
+}
+
+/* 3. Item Grid Category Container (Limit visible items, max 6 items before scrolling) */
+.item-grid-category,
+#kho-viet-phuc-container .item-grid-category {
+  max-height: 240px !important;
+  overflow-y: auto !important;
+}
+
+/* ================= THANH CUỘN RETRO PIXEL ART TỦ ĐỒ ĐỒNG BỘ BỐI CẢNH =================
+   Đồng bộ 100% màu sắc thanh cuộn ở Tủ Đồ (Kho Việt Phục) với bối cảnh:
+   - Theme Sáng: Đồng bộ tone Cam Đào #FED2B7 và Vàng Kem #FFFFE3 của bối cảnh tiên cảnh,
+                 hoặc biến chuyển linh hoạt theo từng bối cảnh cụ thể (Sơn Thần, Cửu Long, Cung Đình, Đầm Sen, Hội An).
+   - Theme Tối: Đồng bộ tone Midnight Blue #050B31 và Vàng Hoàng Triều #D4AF37.
+*/
+
+/* Kích thước chuẩn Pixel 8-bit */
+#kho-viet-phuc-container::-webkit-scrollbar,
+#kho-viet-phuc-container *::-webkit-scrollbar,
+.item-grid-category::-webkit-scrollbar,
+.item-grid-category *::-webkit-scrollbar,
+.retro-pixel-scrollbar::-webkit-scrollbar,
+.retro-pixel-scrollbar *::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+#kho-viet-phuc-container::-webkit-scrollbar-button,
+#kho-viet-phuc-container *::-webkit-scrollbar-button,
+.item-grid-category::-webkit-scrollbar-button,
+.item-grid-category *::-webkit-scrollbar-button,
+.retro-pixel-scrollbar::-webkit-scrollbar-button,
+.retro-pixel-scrollbar *::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* ================= 1. GIAO DIỆN SÁNG (LIGHT THEME): ĐỒNG BỘ BỐI CẢNH ================= */
+[data-theme="light"] #kho-viet-phuc-container,
+[data-theme="light"] #kho-viet-phuc-container *,
+[data-theme="light"] .item-grid-category,
+[data-theme="light"] .item-grid-category *,
+[data-theme="light"] .wardrobe-scroll,
+[data-theme="light"] .wardrobe-scroll * {
+  scrollbar-width: thin;
+  scrollbar-color: #FED2B7 #FFFFE3 !important;
+}
+
+[data-theme="light"] #kho-viet-phuc-container::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container *::-webkit-scrollbar-track,
+[data-theme="light"] .item-grid-category::-webkit-scrollbar-track,
+[data-theme="light"] .item-grid-category *::-webkit-scrollbar-track,
+[data-theme="light"] .wardrobe-scroll::-webkit-scrollbar-track,
+[data-theme="light"] .wardrobe-scroll *::-webkit-scrollbar-track {
+  background: #FFFFE3 !important;
+  border: 1px solid #FED2B7 !important;
+  border-radius: 0px !important;
+}
+
+[data-theme="light"] #kho-viet-phuc-container::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container *::-webkit-scrollbar-thumb,
+[data-theme="light"] .item-grid-category::-webkit-scrollbar-thumb,
+[data-theme="light"] .item-grid-category *::-webkit-scrollbar-thumb,
+[data-theme="light"] .wardrobe-scroll::-webkit-scrollbar-thumb,
+[data-theme="light"] .wardrobe-scroll *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FED2B7 0%, #FFBFA0 50%, #FFA9A9 100%) !important;
+  border: 1px solid #FFBFA0 !important;
+  border-radius: 0px !important;
+  background-clip: border-box !important;
+  box-shadow: none !important;
+}
+
+[data-theme="light"] #kho-viet-phuc-container::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container *::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] .item-grid-category::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] .item-grid-category *::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] .wardrobe-scroll::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] .wardrobe-scroll *::-webkit-scrollbar-thumb:hover {
+  background: #FFA9A9 !important;
+  box-shadow: 0 0 8px rgba(254, 210, 183, 0.9) !important;
+}
+
+/* --- Tùy chỉnh màu thanh cuộn tủ đồ theo từng Bối Cảnh trong Theme Sáng --- */
+/* Cảnh 1: Bồng Lai (Mây Hồng Cam Pastel & Trăng Vàng Kem) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"] * {
+  scrollbar-color: #FED2B7 #FFFFE3 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"] *::-webkit-scrollbar-track {
+  background: #FFFFE3 !important;
+  border: 1px solid #FED2B7 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FED2B7 0%, #FFBFA0 50%, #FFA9A9 100%) !important;
+  border: 1px solid #FFBFA0 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="bong-lai"] *::-webkit-scrollbar-thumb:hover {
+  background: #FFA9A9 !important;
+  box-shadow: 0 0 8px rgba(254, 210, 183, 0.9) !important;
+}
+
+/* Cảnh 2: Sơn Thần Tế Đàn (Rừng Sâu Xanh Ngọc Bích) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"] * {
+  scrollbar-color: #10B981 #ECFDF5 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"] *::-webkit-scrollbar-track {
+  background: #ECFDF5 !important;
+  border: 1px solid #10B981 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #10B981 0%, #059669 100%) !important;
+  border: 1px solid #047857 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="son-than"] *::-webkit-scrollbar-thumb:hover {
+  background: #34D399 !important;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.8) !important;
+}
+
+/* Cảnh 3: Cửu Long Cuốn Thư (Hoàng Kim & Ngọc Bích) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"] * {
+  scrollbar-color: #14B8A6 #F0FDF4 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"] *::-webkit-scrollbar-track {
+  background: #F0FDF4 !important;
+  border: 1px solid #0D9488 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #14B8A6 0%, #059669 50%, #D97706 100%) !important;
+  border: 1px solid #0D9488 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cuu-long"] *::-webkit-scrollbar-thumb:hover {
+  background: #2DD4BF !important;
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.8) !important;
+}
+
+/* Cảnh 4: Cung Đình (Sơn Son Thếp Vàng & Hoàng Triều) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"] * {
+  scrollbar-color: #F59E0B #FEFCE8 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"] *::-webkit-scrollbar-track {
+  background: #FEFCE8 !important;
+  border: 1px solid #F59E0B !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 50%, #B91C1C 100%) !important;
+  border: 1px solid #D97706 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="cung-dinh"] *::-webkit-scrollbar-thumb:hover {
+  background: #FBBF24 !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.8) !important;
+}
+
+/* Cảnh 5: Đầm Sen (Hồng Sen & Nắng Chiều Rạng Rỡ) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"] * {
+  scrollbar-color: #FB7185 #FFF1F2 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"] *::-webkit-scrollbar-track {
+  background: #FFF1F2 !important;
+  border: 1px solid #FB7185 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FB7185 0%, #F43F5E 50%, #E11D48 100%) !important;
+  border: 1px solid #F43F5E !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="dam-sen"] *::-webkit-scrollbar-thumb:hover {
+  background: #FDA4AF !important;
+  box-shadow: 0 0 8px rgba(251, 113, 133, 0.8) !important;
+}
+
+/* Cảnh 6: Phố Cổ Hội An (Lam Ngọc Sông Hoài & Vàng Đèn Lồng) */
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"],
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"] * {
+  scrollbar-color: #38BDF8 #F0F9FF !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"]::-webkit-scrollbar-track,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"] *::-webkit-scrollbar-track {
+  background: #F0F9FF !important;
+  border: 1px solid #38BDF8 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"]::-webkit-scrollbar-thumb,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"] *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38BDF8 0%, #0284C7 50%, #F59E0B 100%) !important;
+  border: 1px solid #0284C7 !important;
+}
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"]::-webkit-scrollbar-thumb:hover,
+[data-theme="light"] #kho-viet-phuc-container[data-scene="hoi-an"] *::-webkit-scrollbar-thumb:hover {
+  background: #67E8F9 !important;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.8) !important;
+}
+
+/* ================= 2. GIAO DIỆN TỐI (DARK THEME): HOÀNG KIM & MIDNIGHT BLUE ================= */
+[data-theme="dark"] #kho-viet-phuc-container,
+[data-theme="dark"] #kho-viet-phuc-container *,
+[data-theme="dark"] .item-grid-category,
+[data-theme="dark"] .item-grid-category *,
+[data-theme="dark"] .wardrobe-scroll,
+[data-theme="dark"] .wardrobe-scroll * {
+  scrollbar-width: thin;
+  scrollbar-color: #D4AF37 #050B31 !important;
+}
+
+[data-theme="dark"] #kho-viet-phuc-container::-webkit-scrollbar-track,
+[data-theme="dark"] #kho-viet-phuc-container *::-webkit-scrollbar-track,
+[data-theme="dark"] .item-grid-category::-webkit-scrollbar-track,
+[data-theme="dark"] .item-grid-category *::-webkit-scrollbar-track,
+[data-theme="dark"] .wardrobe-scroll::-webkit-scrollbar-track,
+[data-theme="dark"] .wardrobe-scroll *::-webkit-scrollbar-track {
+  background: #050B31 !important;
+  border: 1px solid #1F3C73 !important;
+  border-radius: 0px !important;
+}
+
+[data-theme="dark"] #kho-viet-phuc-container::-webkit-scrollbar-thumb,
+[data-theme="dark"] #kho-viet-phuc-container *::-webkit-scrollbar-thumb,
+[data-theme="dark"] .item-grid-category::-webkit-scrollbar-thumb,
+[data-theme="dark"] .item-grid-category *::-webkit-scrollbar-thumb,
+[data-theme="dark"] .wardrobe-scroll::-webkit-scrollbar-thumb,
+[data-theme="dark"] .wardrobe-scroll *::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37 0%, #B45309 100%) !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 0px !important;
+  background-clip: border-box !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] #kho-viet-phuc-container::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] #kho-viet-phuc-container *::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] .item-grid-category::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] .item-grid-category *::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] .wardrobe-scroll::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] .wardrobe-scroll *::-webkit-scrollbar-thumb:hover {
+  background: #FFD700 !important;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.9) !important;
+}
+
+/* ================= 3. THANH CUỘN ĐỊA ĐỒ VIỆT PHỤC (VIET PHUC MAP SCROLLBAR) =================
+   Thanh cuộn mềm mại, nhỏ gọn (width: 7px), bo tròn góc tối đa (border-radius: 10px),
+   đồng bộ tuyệt đối với theme Sáng / Tối.
+*/
+.vietphuc-map-scroll {
+  scrollbar-width: thin;
+}
+
+.vietphuc-map-scroll::-webkit-scrollbar {
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.vietphuc-map-scroll::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Theme Sáng: Tone Cam Đào Nhạt & Vàng Kem Bo Tròn 10px */
+[data-theme="light"] .vietphuc-map-scroll,
+.vietphuc-map-scroll {
+  scrollbar-color: #FED2B7 #FFFFE3;
+}
+
+[data-theme="light"] .vietphuc-map-scroll::-webkit-scrollbar-track,
+.vietphuc-map-scroll::-webkit-scrollbar-track {
+  background: #FFFFE3 !important;
+  border: 1px solid #FED2B7 !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="light"] .vietphuc-map-scroll::-webkit-scrollbar-thumb,
+.vietphuc-map-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FED2B7 0%, #FFBFA0 50%, #FFA9A9 100%) !important;
+  border: 1px solid #FFBFA0 !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="light"] .vietphuc-map-scroll::-webkit-scrollbar-thumb:hover,
+.vietphuc-map-scroll::-webkit-scrollbar-thumb:hover {
+  background: #FFA9A9 !important;
+  box-shadow: 0 0 6px rgba(254, 210, 183, 0.8) !important;
+  border-radius: 10px !important;
+}
+
+/* Theme Tối: Tone Xanh Navy & Hoàng Kim Bo Tròn 10px */
+[data-theme="dark"] .vietphuc-map-scroll {
+  scrollbar-color: #D4AF37 #050B31 !important;
+}
+
+[data-theme="dark"] .vietphuc-map-scroll::-webkit-scrollbar-track {
+  background: #050B31 !important;
+  border: 1px solid #1F3C73 !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="dark"] .vietphuc-map-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4AF37 0%, #B45309 100%) !important;
+  border: 1px solid #D4AF37 !important;
+  border-radius: 10px !important;
+}
+
+[data-theme="dark"] .vietphuc-map-scroll::-webkit-scrollbar-thumb:hover {
+  background: #FFD700 !important;
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.8) !important;
+  border-radius: 10px !important;
+}
+
+/* ================= 4. HIỆU ỨNG GAME HÓA DU HÀNH VIỆT PHỤC & CON DẤU ================= */
+@keyframes pixelBounceIndicator {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-pixel-bounce {
+  animation: pixelBounceIndicator 0.85s ease-in-out infinite;
+}
+
+@keyframes floatParticleAnim {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  animation: floatParticleAnim 3s ease-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+
+

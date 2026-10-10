@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix Remix Remix Việt Phục Pixel Art - Bách Phục Cổ Truyền",
+  "description": "Trang web tương tác giới thiệu Việt Phục (Trang phục truyền thống Việt Nam) phong cách Retro Pixel Art 8-bit RPG.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
